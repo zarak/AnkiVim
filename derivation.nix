@@ -5,5 +5,9 @@ buildPythonApplication {
   version = "1.5.3";
 
   src = ./.;
-  doCheck = false;
+
+  buildInputs = [ pytest ];
+  checkPhase = ''
+    python -m pytest ankivim/tests
+  '';
 }
